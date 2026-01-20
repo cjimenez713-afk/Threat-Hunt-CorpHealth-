@@ -527,8 +527,9 @@ Curl.exe used to download .exe from external tunnels
 DeviceProcessEvents
 | where FileName == "curl.exe" and ProcessCommandLine contains "ngrok"
 | project TimeGenerated, DeviceName, ProcessCommandLine, RemoteUrl
-Writes to CorpHealth diagnostics followed by immediate network egress
+
 ```
+Writes to CorpHealth diagnostics followed by immediate network egress
 ```
 DeviceFileEvents
 | where FolderPath has @"\CorpHealth\" and ActionType == "FileCreated"
@@ -537,18 +538,20 @@ DeviceFileEvents
   | where Timestamp between (ago(1h) .. now())
 ) on DeviceId
 | project DeviceName, FileName, FolderPath, TimeGenerated
-Token modification events
+
 ```
+Token modification events
 ```
 DeviceEvents
 | where AdditionalFields has_any ("tokenChangeDescription","Privileges were added")
 | project TimeGenerated, DeviceName, InitiatingProcessId, AdditionalFields
-Startup folder or ProgramData writes of new executables
+
 ```
+Startup folder or ProgramData writes of new executables
 ```
 DeviceFileEvents
 | where FileName endswith ".exe"
-| where FolderPath has_any(@"C:\ProgramData\Microsoft\Windows\Start Menu\Programs\StartUp", "StartUp")
+| where FolderPath has_any ("C:\\ProgramData\\Microsoft\\Windows\\Start, "\\StartUp")
 | project TimeGenerated, DeviceName, FolderPath, FileName, InitiatingProcessCommandLine
 ```
 ---
