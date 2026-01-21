@@ -483,14 +483,14 @@ DeviceLogonEvents
 
 | Tactic	| Technique	| Evidence |
 |---------|-----------|----------|
-| Initial Access / Execution	| T1059.001 | PowerShell	MaintenanceRunner_Distributed.ps1, -EncodedCommand usage
-| Persistence	| T1547.001 | Registry Run Keys, T1053 Scheduled Task	Run key MaintenanceRunner, scheduled task CorpHealth_A65E64
-| Defense Evasion |	T1562.001/ScriptBlock Evasion, T1564 | Log Deletion	EncodedCommand, attempt to set Defender Exclusion, Run-key deleted, event log cleanup patterns
-| Credential Access |	T1003 / T1552? (Harvesting)	| CH-OPS-WKS02 user-pass.txt, registry queries, staged inventory data
-| Privilege Escalation |	T1134 / Token manipulation	| ProcessPrimaryTokenModified (token change), SID modified
-| Lateral Movement |	T1021 (Remote Services)	| Remote sessions; schtasks style pivoting metadata
-| Exfiltration |	T1041 / T1105	| Staged CSVs, ngrok-assisted tunnel, remote C2 IPs and external downloads
-| Command & Control	| T1071 / T1105	| Reverse shell revshell.exe connecting to 13.228.171.119:11746 via tunnel
+| Initial Access / Execution	| T1059.001 | PowerShell:	MaintenanceRunner_Distributed.ps1, -EncodedCommand usage
+| Persistence	| T1547.001/T1053 | Registry Run Keys/Scheduled Task	Run key: MaintenanceRunner, scheduled task CorpHealth_A65E64
+| Defense Evasion |	T1562.001/T1564 | Log Deletion/EncodedCommand: attempt to set Defender Exclusion, Run-key deleted, event log cleanup patterns
+| Credential Access |	T1003/T1552	| CH-OPS-WKS02 user-pass.txt, registry queries, staged inventory data
+| Privilege Escalation |	T1134	| Token manipulation: ProcessPrimaryTokenModified (token change), SID modified
+| Lateral Movement |	T1021	| Remote sessions: schtasks style pivoting metadata
+| Exfiltration |	T1041/T1105	| Staged CSVs, ngrok-assisted tunnel, remote C2 IPs and external downloads
+| Command & Control	| T1071/T1105	| Reverse shell: revshell.exe connecting to 13.228.171.119:11746 via tunnel
 ---
 
 
