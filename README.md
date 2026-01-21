@@ -12,7 +12,32 @@
 ***Timeframe:*** Mid-November – Early December 2025 (key activity 2025-11-23 → 2025-11-30)
 
 ---
+# Table of Contents
 
+1. [Scenario Overview](#scenario-overview)
+
+2. [Executive Summary](#executive-summary)
+
+3. [Completed Flags](#completed-flags)
+
+4. [Flag-by-Flag + KQL](#flag-by-flag) 
+
+5. [Timeline](#timeline)
+
+6. [MITRE ATT&CK Mapping](#mitre-att&ck-mapping)
+
+7. [Indicators of Compromise (IoCs)](#indicators-of-compromise-(iocs))
+
+8. [Custom Detection Rule Ideas](#custom-detection-rule-ideas)
+
+9. [Remediation & Containment Checklist](#remediation-&-containment-checklist)
+
+10. [Lessons Learned](#lessons-learned)
+
+11. [Final Recommendation](#final-recommendation)
+
+
+---
 ## 🧠 Scenario Overview
 
 Your organization recently completed a phased deployment of an internal platform known as CorpHealth — a lightweight system monitoring and maintenance framework designed to: 
